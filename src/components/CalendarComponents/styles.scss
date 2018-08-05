@@ -1,0 +1,46 @@
+.calendar-button {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    background-color: white;
+    border: 1px solid #CFCFCF;
+    border-radius: 2px;
+    padding: 0 10px 0 6px;
+
+    &:active,
+    &:hover {
+        background-color: #F5F5F5;
+    }
+
+    .calendar-icon {
+        height: 23px;
+        width: auto;
+        margin-right: 10px;
+        color: #4CBCC5;
+        vertical-align: middle;
+    }
+
+    .calendar-dates {
+        margin-right: 12px;
+    }
+
+    .caret-wrapper {
+        height: 32px;
+        display: flex;
+        padding-left: 7px;
+        border-left: 1px solid #CFCFCF;
+
+        svg {
+            margin: auto;
+        }
+    }
+}
+
+.calendar-picker {
+    background-color: white;
+
+    .picker-close {
+        text-align: right;
+        padding: 0 10px;
+    }
+}

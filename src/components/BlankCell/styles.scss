@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.blank-cell {
+    width: 36px;
+    border-right: $dashboard-col-separator;
+
+    .main-body {
+        height: 210px - $dashboard-row-separator-width;
+    }
+
+    &.highlighted {
+        > .main-body {
+            background-color: $highlight-bg-color;
+        }
+    }
+
+    &.small {
+        .main-body {
+            height: 185px - $dashboard-row-separator-width;
+        }
+    }
+
+    .child-blanks {
+        > * {
+            border-top: $dashboard-childrow-separator;
+        }
+    }
+}

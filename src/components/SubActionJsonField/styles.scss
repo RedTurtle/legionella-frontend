@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.action-json-field {
+    align-items: flex-start;
+
+    > svg {
+        margin-top: 10px;
+    }
+    input {
+        width: 300px;
+        margin-right: 8px;
+        height: 34px;
+        border: 1px solid #cfcfcf;
+        border-radius: 2px;
+        padding: 2px 10px;
+    }
+    .field-actions {
+        width: 100%;
+        margin: 0 15px;
+
+        .main-text span {
+            margin-right: 8px;
+        }
+    }
+    .sub-actions {
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+        padding-top: 10px;
+
+        h4 {
+            margin: 0 0 10px;
+            color: $text-color;
+        }
+        input {
+            margin-bottom: 4px;
+        }
+        .add-subaction {
+            &:active,
+            &:hover {
+                color: $primary-darker;
+            }
+        }
+    }
+}

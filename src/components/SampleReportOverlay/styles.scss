@@ -1,0 +1,134 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.sample-report-overlay {
+    padding-top: 17px;
+    width: 330px;
+
+    .overlay-content {
+        position: relative;
+        background-color: white;
+        border: 1px solid #4cbcc5;
+        padding: 10px 15px;
+        box-shadow: 0 0 9px 0 transparentize(black, 0.8);
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: 100%;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        &:before {
+            left: calc(50% - 8px);
+            border-width: 0 8px 17px 8px;
+            border-color: transparent transparent #4cbcc5 transparent;
+        }
+
+        &:after {
+            left: calc(50% - 7px);
+            border-width: 0 7px 15px 7px;
+            border-color: transparent transparent #ffffff transparent;
+        }
+    }
+
+    header {
+        padding-bottom: 14px;
+        border-bottom: 1px solid #c6cace;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .overlay-title {
+        font-weight: 600;
+        padding-right: 1em;
+    }
+
+    .overlay-structure {
+        font-size: 0.9em;
+    }
+
+    .close {
+        position: absolute;
+        top: 2px;
+        right: 10px;
+        color: #4a4a4a;
+
+        &:active,
+        &:hover {
+            color: black;
+        }
+    }
+
+    .row {
+        border-bottom: 1px solid #c6cace;
+        padding: 8px 0 10px;
+        display: flex;
+        align-items: center;
+        @include clearfix;
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 5px;
+        }
+    }
+
+    [class^='badge-'] {
+        float: left;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+    }
+
+    .badge-perfect {
+        background-color: $state-green;
+        border-color: darken($state-green, 15%);
+    }
+
+    .badge-good {
+        background-color: $state-lightgreen;
+        border-color: darken($state-lightgreen, 15%);
+    }
+
+    .badge-bad {
+        background-color: $state-yellow;
+        border-color: darken($state-yellow, 15%);
+    }
+
+    .badge-danger {
+        background-color: $state-orange;
+        border-color: darken($state-orange, 15%);
+    }
+
+    .badge-critical {
+        background-color: $state-red;
+        border-color: darken($state-red, 15%);
+    }
+
+    .perc {
+        float: left;
+        font-size: 1.15em;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+
+    .exact-number {
+        float: left;
+        font-size: 0.9em;
+        margin-left: 8px;
+    }
+
+    .range {
+        float: right;
+        margin-left: auto;
+        font-size: 0.9em;
+    }
+}

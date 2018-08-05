@@ -1,0 +1,34 @@
+.wsp-details-button {
+    width: 27px;
+    height: 185px;
+    padding: 2px 0;
+
+    button {
+        display: block;
+        margin: 0 auto;
+        background-color: #777;
+        border-radius: 2px;
+        width: 18px;
+        height: 100%;
+
+        &:hover {
+            background-color: darken(#777, 5%);
+        }
+
+        &:active {
+            background-color: darken(#777, 10%);
+        }
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    svg {
+        height: 25px;
+        width: auto;
+        color: #bdbdbd;
+        position: relative;
+        left: -3px;
+    }
+}

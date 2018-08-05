@@ -1,0 +1,93 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.aggregated-sample {
+    @include clearfix;
+    display: flex;
+
+    .sample-label,
+    .aggregated-data {
+        flex: 1 1 auto;
+        padding-bottom: 6px;
+    }
+    .sample-label {
+        width: 35%;
+
+        > span {
+            display: inline-block;
+            padding: 0 14px;
+            font-size: 0.82em;
+            font-weight: 700;
+            min-width: 118px;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        &.cold > span {
+            background-color: rgba(0, 90, 198, 0.22);
+        }
+        &.hot > span {
+            background-color: rgba(189, 49, 46, 0.17);
+        }
+    }
+    .samples-counter {
+        display: flex;
+        align-items: center;
+
+        strong {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            margin-right: 4px;
+
+            > span {
+                font-size: 1.5em;
+                margin-right: 8px;
+            }
+        }
+    }
+    .aggregated-data {
+        @include clearfix;
+        width: 57%;
+        margin-left: 8%;
+        padding-top: 14px;
+        display: flex;
+        justify-content: flex-end;
+
+        &.hot {
+            border-top: 1px dashed #cfcfcf;
+        }
+    }
+    .alert {
+        width: 44px;
+        height: 44px;
+        position: relative;
+        text-align: center;
+        float: left;
+        margin-left: 5px;
+
+        svg {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        span {
+            line-height: 44px;
+            font-size: 0.9em;
+        }
+    }
+    .alert-perfect .colored {
+        color: $state-green;
+    }
+    .alert-good .colored {
+        color: $state-lightgreen;
+    }
+    .alert-bad .colored {
+        color: $state-yellow;
+    }
+    .alert-danger .colored {
+        color: $state-orange;
+    }
+    .alert-critical .colored {
+        color: $state-red;
+    }
+}

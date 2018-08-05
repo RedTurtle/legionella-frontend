@@ -1,0 +1,182 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.sample {
+    padding: 10px 0 0;
+    width: 450px;
+
+    .sample-wrapper {
+        padding: 0 5px;
+        border-right: $dashboard-col-separator;
+    }
+
+    .sample-content {
+        height: 116px;
+        position: relative;
+        padding: 10px 115px 10px 25px;
+        background-color: #f1f2f1;
+
+        &.with-filter {
+            padding-left: 58px;
+        }
+    }
+    .filter-on {
+        position: absolute;
+        top: 10px;
+        left: 8px;
+        padding-right: 11px;
+        border-right: 1px solid $text-color;
+    }
+
+    .sample-title,
+    .sample-date,
+    .sample-by {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .sample-edit {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        button {
+            line-height: 1em;
+            color: $primary-color;
+            display: block;
+
+            svg {
+                font-size: 1.2em;
+            }
+
+            &:focus,
+            &:hover {
+                color: darken($primary-color, 10%);
+            }
+        }
+    }
+
+    .sample-display {
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+
+        a {
+            line-height: 1em;
+            color: #9a9b9a;
+            display: block;
+
+            svg {
+                font-size: 1.2em;
+            }
+
+            &:focus,
+            &:hover {
+                color: darken(#9a9b9a, 10%);
+            }
+        }
+    }
+
+    .sample-attachments {
+        a {
+            color: $primary-darker;
+            text-decoration: none;
+
+            span {
+                vertical-align: middle;
+            }
+
+            &:focus,
+            &:hover {
+                color: darken($primary-darker, 10%);
+            }
+        }
+    }
+
+    .resampling {
+        margin-top: 5px;
+        font-style: italic;
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+
+    .workflow-toggle {
+        height: 32px;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: white;
+        @include antialiasing;
+
+        > svg {
+            margin-left: 5px;
+        }
+        .state {
+            font-weight: 600;
+        }
+        .closed {
+            display: inline-block;
+            width: 11px;
+            height: 11px;
+            background-color: #d0021b;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+    .workflow-wrapper {
+        position: absolute;
+        right: 0;
+        top: calc(100% - 34px);
+        text-align: right;
+
+        &.state-open {
+            .workflow-toggle {
+                background-color: $primary-darker;
+            }
+            &.active .workflow-toggle {
+                &:hover {
+                    background-color: darken($color: $primary-darker, $amount: 5%);
+                }
+                &:active {
+                    background-color: darken($color: $primary-darker, $amount: 10%);
+                }
+            }
+        }
+        &.state-validated {
+            .workflow-toggle {
+                background-color: $state-green;
+            }
+            &.active .workflow-toggle {
+                &:hover {
+                    background-color: darken($color: $state-green, $amount: 5%);
+                }
+                &:active {
+                    background-color: darken($color: $state-green, $amount: 10%);
+                }
+            }
+        }
+        &.state-closed {
+            .workflow-toggle {
+                background-color: #333;
+            }
+        }
+    }
+    .workflow-actions {
+        background-color: $body-bg;
+        box-shadow: 0 5px 8px 0 transparentize(black, 0.8);
+        display: flex;
+        flex-flow: column nowrap;
+
+        button {
+            padding: 10px 15px 10px 20px;
+            border-right: 5px solid transparent;
+            display: flex;
+            justify-content: flex-end;
+
+            &:hover {
+                background-color: white;
+                border-right-color: $primary-darker;
+                color: $primary-darker;
+            }
+        }
+    }
+}

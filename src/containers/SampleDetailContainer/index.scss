@@ -1,0 +1,339 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.DetailSample {
+    width: $detailsample-column-width;
+
+    @media (max-width: $detailsample-column-width) {
+        width: 100%;
+    }
+
+    .DetailSampleHeader {
+        @include clearfix;
+        display: flex;
+
+        .DetailSampleHeaderLabel {
+            display: block;
+            flex: 1 1 auto;
+            float: left;
+            height: 65px;
+            width: $detailsample-column-width - 70px;
+            overflow: hidden;
+            background-color: $headings-background-color;
+            color: #fff;
+            font-size: 1.4em;
+            font-weight: 300;
+            padding: 15px 50px;
+            margin: 0;
+        }
+
+        button {
+            flex: 0 0 auto;
+            float: left;
+            height: 65px;
+            width: 70px;
+            overflow: hidden;
+            background-color: $dashboard-col-separator-color;
+            color: #fff;
+
+            svg {
+                font-size: 50px;
+            }
+        }
+    }
+
+    .DetailSampleContent {
+        padding: 30px 50px 45px;
+
+        @media (max-width: $screen-sm-max) {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .WSPHeader {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        .WSP-info {
+            display: flex;
+            flex-flow: row wrap;
+
+            .WSP-data {
+                line-height: 1em;
+                margin-right: 20px;
+
+                .WSP-id {
+                    background-color: $headings-background-color;
+                    color: #fff;
+                    min-width: 75px;
+                    padding: 5px 10px;
+
+                    .WSP-label {
+                        text-transform: uppercase;
+                        line-height: 1em;
+                        font-weight: normal;
+                        margin-bottom: 7.5px;
+                        font-size: 0.7em;
+                    }
+
+                    .WSP-number {
+                        font-size: 1.2em;
+                        line-height: 1em;
+                    }
+                }
+
+                .WSP-description {
+                    line-height: 1.4em;
+                    margin-bottom: 5px;
+                    @include clearfix;
+
+                    .ward-number,
+                    .ward-title {
+                        font-weight: 600;
+                        font-size: 1.1em;
+                        float: left;
+                    }
+
+                    .ward-number {
+                        padding-right: 15px;
+                    }
+
+                    .ward-title,
+                    .sink {
+                        @include ellipsis(600px);
+                    }
+                }
+
+                .ModifyButton {
+                    button {
+                        line-height: 1em;
+                        font-size: 0.9em;
+                        font-weight: 300;
+                        color: $form-label-color;
+
+                        svg {
+                            margin-right: 5px;
+                        }
+
+                        &:hover {
+                            color: darken($form-label-color, 5%);
+                        }
+
+                        &:active {
+                            color: darken($form-label-color, 10%);
+                        }
+                    }
+                }
+
+                .WSP-building {
+                    border-left: 2px solid #dcdddc;
+                    padding-left: 15px;
+                    line-height: 1.4em;
+                }
+            }
+        }
+
+        .WSP-details {
+            float: right;
+
+            .WSP-risk-level {
+                text-transform: uppercase;
+                font-weight: 600;
+
+                .WSP-label {
+                    color: #9b9b9b;
+                    font-size: 0.8em;
+                    margin-right: 15px;
+                }
+
+                .risk-level {
+                    line-height: 1em;
+
+                    &.alto {
+                        color: $state-red;
+                    }
+
+                    &.medio {
+                        color: $state-orange;
+                    }
+
+                    &.basso {
+                        color: $state-green;
+                    }
+                }
+            }
+
+            .WSP-review-date {
+                background-color: #f5f1ab;
+                padding: 10px;
+                font-size: 0.9em;
+                line-height: 1em;
+
+                .date {
+                    font-weight: 600;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .DetailSampleTable {
+            margin: 30px 0 0;
+            font-size: 0.9em;
+
+            .table-row {
+                display: flex;
+                flex-flow: row wrap;
+                width: 100%;
+                border-bottom: 2px solid #dcdddc;
+                border-collapse: collapse;
+                padding: 15px 5px 20px;
+                position: relative;
+
+                @media (max-width: $screen-sm-max) {
+                    display: block;
+                }
+
+                &.header {
+                    padding: 10px 5px;
+                    border-bottom: 2px solid #9b9b9b;
+                    text-transform: uppercase;
+                    font-weight: 600;
+
+                    .table-cell {
+                        &.value {
+                            padding-left: 20px;
+
+                            @media (max-width: $screen-sm-max) {
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .table-cell {
+                overflow: hidden;
+                //white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-right: 20px;
+
+                &.state {
+                    width: 6%;
+                }
+                &.sample-cell {
+                    width: 24%;
+                    padding-right: 50px;
+                }
+                &.value {
+                    width: 13.5%;
+                }
+                &.actions {
+                    width: 16%;
+                    padding-right: 0;
+                }
+                &.state-level {
+                    position: absolute;
+                    bottom: 0;
+                    left: 10px;
+                }
+
+                @media (max-width: $screen-sm-max) {
+                    &.state,
+                    &.sample-cell,
+                    &.value,
+                    &.actions,
+                    &.state-level {
+                        width: 100%;
+                        padding-right: 0;
+                        position: static;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+
+            .label {
+                font-weight: 600;
+            }
+
+            .alert-level {
+                margin: 0 0 5px;
+
+                &.bad,
+                &.danger,
+                &.critical {
+                    font-weight: 700;
+                }
+            }
+
+            .state-circle {
+                display: inline-block;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                line-height: 1em;
+                vertical-align: middle;
+                margin-left: 5px;
+
+                &.perfect {
+                    background-color: $state-green;
+                }
+                &.good {
+                    background-color: $state-lightgreen;
+                }
+                &.bad {
+                    background-color: $state-yellow;
+                }
+                &.danger {
+                    background-color: $state-orange;
+                }
+                &.critical {
+                    background-color: $state-red;
+                }
+            }
+
+            .state-bar {
+                border-left: 10px solid transparent;
+                padding-left: 10px;
+                padding-bottom: 10px;
+
+                &.bad {
+                    border-color: $state-yellow;
+                }
+                &.danger {
+                    border-color: $state-orange;
+                }
+                &.critical {
+                    border-color: $state-red;
+                }
+            }
+
+            .state-risk-level {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 0.8em;
+                color: #9b9b9b;
+
+                .basso {
+                    color: $state-green;
+                }
+                .medio {
+                    color: $state-orange;
+                }
+                .alto {
+                    color: $state-red;
+                }
+            }
+            .actions {
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+                li {
+                    margin-bottom: 0.25em;
+                }
+            }
+        }
+    }
+}

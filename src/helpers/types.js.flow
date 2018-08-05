@@ -1,0 +1,10 @@
+// @flow
+export type AlertLevels = {|
+  perfect: number,
+  good: number,
+  bad: number,
+  danger: number,
+  critical: number,
+|};
+
+export type GraphqlConnection<A> = { edges: Array<{ node: A }> };

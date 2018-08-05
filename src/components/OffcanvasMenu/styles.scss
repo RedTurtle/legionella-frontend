@@ -1,0 +1,41 @@
+@import '../../scss/variables';
+
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    min-height: 100vh;
+    z-index: 2000;
+    background-color: $body-bg;
+    box-shadow: -2px 0 9px 0 transparentize(black, 0.74);
+    overflow: hidden;
+    transition: 0.2s width ease-in;
+
+    .offcanvas-content {
+        position: absolute;
+        top: 0;
+        right: -$addsample-column-width;
+        width: $addsample-column-width;
+        transition: 0.2s right ease-in;
+    }
+    &.open {
+        width: $addsample-column-width;
+        transition: 0.2s width ease-in;
+        overflow: auto;
+
+        .offcanvas-content.offcanvas-content {
+            right: 0;
+            transition: 0.2s right ease-out;
+        }
+    }
+    &.sampleDetail {
+        .offcanvas-content {
+            right: -$detailsample-column-width;
+            width: $detailsample-column-width;
+        }
+        &.open {
+            width: $detailsample-column-width;
+        }
+    }
+}

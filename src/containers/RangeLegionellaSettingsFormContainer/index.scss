@@ -1,0 +1,21 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.range-legionella-settings-form {
+    > .description {
+        $warning-color: #d6b627;
+        background-color: transparentize($color: $warning-color, $amount: 0.95);
+        border: 1px solid $warning-color;
+        padding: 15px 20px 15px 45px;
+        margin-left: 50px;
+        margin-right: 50px;
+        position: relative;
+
+        svg {
+            position: absolute;
+            left: 20px;
+            top: calc(15px + 0.25em);
+            color: darken($color: $warning-color, $amount: 10%);
+        }
+    }
+}

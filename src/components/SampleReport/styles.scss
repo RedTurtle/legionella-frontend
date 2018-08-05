@@ -1,0 +1,234 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.sample-report {
+    width: 450px;
+    height: 185px;
+    border-right: $dashboard-col-separator;
+    background-color: white;
+
+    .sample-report-content {
+        border-left: 8px solid #d9d9d9;
+        border-right: 8px solid #d9d9d9;
+    }
+
+    .split-measures {
+        padding: 0 15px;
+        height: 105px;
+        border-bottom: 1px solid #cfcfcf;
+    }
+
+    .labels-row,
+    .temp-row,
+    .legio-row,
+    .biox-row,
+    .values,
+    .actions-row {
+        @include clearfix;
+        display: flex;
+        align-items: center;
+    }
+
+    .biox-row {
+        height: 42px;
+        border-bottom: 1px solid #cfcfcf;
+        padding: 0 15px;
+    }
+
+    .actions-row {
+        height: 36px;
+    }
+
+    .labels-row {
+        padding-left: 39px;
+        height: 30px;
+        border-bottom: 1px dashed #cfcfcf;
+
+        span {
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .cold {
+            color: #0066c6;
+        }
+
+        .warm {
+            color: #cc0019;
+        }
+    }
+
+    .temp-row {
+        height: 35px;
+        border-bottom: 1px dashed #cfcfcf;
+    }
+
+    .legio-row {
+        height: 40px;
+    }
+
+    .temp-row,
+    .legio-row,
+    .biox-row {
+        figure {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    figure {
+        margin: 0 15px 0 0;
+        float: left;
+        flex: 0 0 auto;
+        text-align: center;
+        display: flex;
+    }
+
+    img {
+        vertical-align: initial;
+        margin: auto;
+    }
+
+    .value-wrapper {
+        width: 25%;
+        float: left;
+        flex: 1 1 auto;
+
+        + .value-wrapper {
+            margin-left: 5px;
+        }
+    }
+
+    .values {
+        width: calc(100% - 39px);
+        float: left;
+    }
+
+    .risk-level {
+        width: 36%;
+        float: left;
+        padding-left: 15px;
+        font-size: 0.9em;
+    }
+
+    .actions,
+    .empty-actions,
+    .sampling-date,
+    .view,
+    .edit {
+        height: 100%;
+        width: 32%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        figure {
+            margin-right: 7px;
+        }
+    }
+
+    .actions {
+        border-left: 1px solid #cfcfcf;
+        color: darken(#4cbcc5, 10%);
+
+        &:hover {
+            background-color: transparentize(black, 0.96);
+        }
+
+        &:active {
+            background-color: transparentize(black, 0.92);
+        }
+    }
+
+    .sampling-date {
+        border-left: 1px solid #cfcfcf;
+    }
+
+    .edit,
+    .view {
+        display: none;
+        color: white;
+    }
+    .edit {
+        background-color: #4cbcc5;
+
+        &:hover {
+            background-color: darken(#4cbcc5, 5%);
+        }
+        &:active {
+            background-color: darken(#4cbcc5, 10%);
+        }
+    }
+    .view {
+        background-color: #949494;
+
+        &:hover {
+            background-color: darken(#949494, 5%);
+        }
+        &:active {
+            background-color: darken(#949494, 10%);
+        }
+    }
+
+    &:hover {
+        .sampling-date {
+            display: none;
+        }
+        .edit,
+        .view {
+            display: flex;
+        }
+    }
+
+    span.text {
+        margin-left: 10px;
+
+        > span {
+            background-color: #e4e4e4;
+            border-radius: 2px;
+            display: inline-block;
+            width: 7px;
+            height: 9px;
+            margin-right: 2px;
+        }
+    }
+
+    span.text,
+    .mu {
+        font-size: 0.85em;
+    }
+
+    span.value {
+        display: inline-block;
+        border-radius: 45px;
+        padding: 0 8px;
+        color: white;
+        font-size: 0.9em;
+        white-space: nowrap;
+
+        &.normal,
+        &.perfect,
+        &.good {
+            color: #333;
+            background-color: #f0f0f0;
+        }
+        // &.perfect {
+        //     background-color: $state-green;
+        // }
+        // &.good {
+        //     background-color: $state-lightgreen;
+        //     color: #333;
+        // }
+        &.bad {
+            background-color: $state-yellow;
+            color: #333;
+        }
+        &.danger {
+            background-color: $state-orange;
+        }
+        &.critical {
+            background-color: $state-red;
+        }
+    }
+}

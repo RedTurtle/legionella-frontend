@@ -1,0 +1,42 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.menu-item.dropdown {
+    position: relative;
+
+    > a {
+        svg {
+            margin-left: 5px;
+            color: $primary-color;
+        }
+    }
+    ul {
+        position: absolute;
+        top: 95%;
+        left: 0;
+        width: 200px;
+        background-color: $body-bg;
+        box-shadow: 0 5px 8px 0 transparentize($color: black, $amount: 0.8);
+        z-index: 2000;
+        padding: 0;
+
+        > li {
+            display: block;
+
+            > a {
+                display: block;
+                text-decoration: none;
+                color: $text-color;
+                padding: 5px 10px 5px 15px;
+                border-left: 5px solid transparent;
+
+                &:focus,
+                &:hover {
+                    color: $primary-darker;
+                    background-color: white;
+                    border-left-color: $primary-color;
+                }
+            }
+        }
+    }
+}

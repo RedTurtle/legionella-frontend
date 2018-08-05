@@ -1,0 +1,73 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.ReactModal__Content.validate-modal,
+.ReactModal__Content.closing-modal {
+    position: absolute;
+    top: 40px;
+    left: 10vw;
+    right: 10vw;
+    bottom: 200px;
+    border: 1px solid #444;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    background-color: $body-bg;
+
+    h2 {
+        background-color: $primary-color;
+        color: white;
+        margin: 0;
+        font-weight: 600;
+        padding: 15px 20px;
+        @include antialiasing;
+    }
+    .modal-content {
+        padding: 20px;
+        font-size: 1.1em;
+    }
+    strong {
+        color: $state-red;
+    }
+    button {
+        padding: 6px 12px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        background-color: white;
+        margin-right: 20px;
+
+        &:hover {
+            background-color: #eee;
+            border-color: #bbb;
+        }
+        &:active {
+            background-color: #ddd;
+            border-color: #aaa;
+        }
+        &.modal-cancel {
+            color: white;
+            background-color: $primary-color;
+            border-color: $primary-darker;
+
+            &:hover {
+                background-color: darken($color: $primary-color, $amount: 5%);
+                border-color: darken($color: $primary-darker, $amount: 5%);
+            }
+            &:active {
+                background-color: darken($color: $primary-color, $amount: 10%);
+                border-color: darken($color: $primary-darker, $amount: 10%);
+            }
+        }
+    }
+}
+
+.ReactModal__Overlay.closing-modal-overlay,
+.ReactModal__Overlay.validate-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparentize($color: black, $amount: 0.3);
+    z-index: 9000;
+}

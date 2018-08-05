@@ -1,0 +1,210 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.WSP {
+    $height: 185px;
+    background-color: #fff;
+    padding: 5px 20px;
+    width: 400px;
+    height: $height;
+    overflow: hidden;
+    border-right: $dashboard-col-separator;
+
+    .WSP-data-main,
+    .WSP-data {
+        line-height: 1em;
+        padding: 10px 0;
+        border-top: 1px solid #dcdddc;
+
+        &:first-child {
+            border-top: 0 none;
+        }
+
+        &.WSP-data-main {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .WSP-label {
+            font-size: 0.8em;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1em;
+        }
+
+        .WSP-id {
+            padding: 5px 10px;
+            background-color: #4a4a4a;
+            color: #fff;
+            min-width: 75px;
+
+            .WSP-label {
+                font-weight: normal;
+                margin-bottom: 7.5px;
+                font-size: 0.7em;
+            }
+
+            .WSP-number {
+                font-size: 1.2em;
+                line-height: 1em;
+            }
+        }
+
+        .WSP-risk-level,
+        .WSP-operative {
+            padding: 5px 20px 0;
+
+            .WSP-label {
+                color: #9b9b9b;
+            }
+        }
+
+        .WSP-risk-level {
+            .risk-level {
+                span {
+                    background-color: #e4e4e4;
+                    border-radius: 2px;
+                    display: inline-block;
+                    width: 7px;
+                    height: 9px;
+                    margin-right: 2px;
+                }
+                &.basso span.low-level {
+                    background-color: $state-green;
+                }
+                &.medio span {
+                    &.low-level,
+                    &.med-level {
+                        background-color: $state-orange;
+                    }
+                }
+                &.alto span {
+                    background-color: $state-red;
+                }
+            }
+        }
+
+        .WSP-operative {
+            border-left: 1px solid #dcdddc;
+            padding-right: 0;
+
+            .operative-status {
+                line-height: 1em;
+
+                span {
+                    line-height: 1em;
+                    border-left: 2px solid #dcdddc;
+                    padding-left: 10px;
+                    margin-left: 10px;
+                    display: inline-block;
+
+                    &:first-child {
+                        border-left: 0 none;
+                        padding-left: 0;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .WSP-description {
+            line-height: 1.4em;
+            @include clearfix;
+
+            .ward-number,
+            .ward-title {
+                font-weight: 600;
+            }
+
+            .ward-number {
+                padding-right: 15px;
+            }
+
+            .sink,
+            .building {
+                font-size: 0.9em;
+            }
+
+            .ward-title,
+            .sink {
+                @include ellipsis(270px);
+            }
+
+            .ward-number,
+            .ward-title,
+            .sink {
+                float: left;
+            }
+
+            .building {
+                display: block;
+                float: right;
+            }
+        }
+
+        .WSP-date {
+            float: left;
+
+            svg {
+                margin-right: 5px;
+                font-size: 1.2em;
+            }
+
+            span {
+                font-size: 0.9em;
+
+                &.expired {
+                    color: $state-red;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .WSP-history {
+            float: right;
+            margin-left: 15px;
+            color: #168892;
+
+            svg {
+                margin-right: 5px;
+                font-size: 1.2em;
+            }
+        }
+
+        .state-circles {
+            float: right;
+            border-left: 1px solid #dcdddc;
+            padding-left: 15px;
+            margin-left: 15px;
+
+            .state-circle {
+                display: inline-block;
+                height: 15px;
+                width: 15px;
+                border: 2px solid #dcdddc;
+                border-radius: 50%;
+                line-height: 1em;
+                vertical-align: middle;
+
+                &.critical {
+                    background-color: $state-red;
+                    border-color: $state-red;
+                }
+                &.danger {
+                    background-color: $state-orange;
+                    border-color: $state-orange;
+                }
+                &.bad {
+                    border-color: $state-yellow;
+                }
+                &.good {
+                    border-color: $state-lightgreen;
+                }
+                &.perfect {
+                    border-color: $state-green;
+                }
+            }
+        }
+    }
+}

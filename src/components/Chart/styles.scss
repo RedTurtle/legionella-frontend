@@ -1,0 +1,47 @@
+.chart {
+    display: flex;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .first-row {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .total-count {
+        position: absolute;
+        top: 75px;
+        left: 80px;
+        width: 60px;
+        text-align: center;
+        line-height: 1.2;
+
+        strong {
+            font-size: 1.5em;
+            font-weight: 600;
+            display: block;
+        }
+    }
+    .chart-title {
+        display: inline-block;
+        text-align: center;
+        margin-left: 37px;
+
+        p {
+            margin-top: 0.5em;
+        }
+        span {
+            font-size: 1.1em;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 0.2em 0.5em;
+            font-weight: 600;
+            min-width: 150px;
+        }
+    }
+    @media (min-width: 1350px) {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

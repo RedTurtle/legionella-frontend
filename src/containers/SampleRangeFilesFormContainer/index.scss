@@ -1,0 +1,26 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.sample-range-files-form {
+    .saved-file a {
+        color: $text-color;
+
+        &:focus,
+        &:hover {
+            color: $primary-darker;
+        }
+    }
+    .remove-uploading-file {
+        background-color: #d25400;
+        color: white;
+        padding: 0px 3px;
+        margin-left: 5px;
+        border-radius: 4px;
+        line-height: 1.2;
+
+        svg {
+            position: relative;
+            top: -1px;
+        }
+    }
+}

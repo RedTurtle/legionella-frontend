@@ -1,0 +1,673 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.AddSample {
+    .AddSampleHeader {
+        @include clearfix;
+        display: flex;
+
+        .AddSampleHeaderLabel {
+            display: block;
+            flex: 1 1 auto;
+            float: left;
+            height: 65px;
+            width: $addsample-column-width - 70px;
+            overflow: hidden;
+            background-color: $headings-background-color;
+            color: #fff;
+            font-size: 1.4em;
+            font-weight: 300;
+            padding: 15px 30px;
+            margin: 0;
+        }
+
+        button {
+            flex: 0 0 auto;
+            float: left;
+            height: 65px;
+            width: 70px;
+            overflow: hidden;
+            background-color: $dashboard-col-separator-color;
+            color: #fff;
+
+            svg {
+                font-size: 50px;
+            }
+        }
+    }
+
+    .form {
+        padding: 30px 50px 45px;
+
+        .Field {
+            @include clearfix;
+            margin-bottom: 40px;
+
+            .FieldName {
+                color: $form-label-color;
+                text-transform: uppercase;
+                font-size: 1em;
+                font-weight: 600;
+                margin: 0 0 5px;
+
+                .udm {
+                    color: #333;
+                    font-weight: 400;
+                    text-transform: none;
+                }
+            }
+            .required-label {
+                position: relative;
+                top: -2px;
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: #d0021b;
+                border: 1px solid darken(#d0021b, 5%);
+                margin-left: 10px;
+            }
+
+            .FieldDescription {
+                color: #7f7f7f;
+                font-size: 0.95em;
+                margin-bottom: 5px;
+                display: block;
+            }
+
+            .Calendar {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 7px;
+                    left: 7px;
+                    height: 23px;
+                    width: auto;
+                    color: #4cbcc5;
+                    z-index: 1;
+                }
+
+                .Select {
+                    .Select-value,
+                    .Select-input {
+                        padding-left: 35px;
+                    }
+
+                    .Select-placeholder {
+                        padding-left: 40px;
+                    }
+                }
+            }
+
+            .AddSampleButton {
+                text-align: right;
+
+                button {
+                    line-height: 1em;
+
+                    .Plus {
+                        display: inline-block;
+                        border-radius: 3px;
+                        background-color: $form-label-color;
+                        color: white;
+                        padding: 2.5px 3px;
+                        font-size: 15px;
+                        line-height: 7.5px;
+                        height: 15px;
+                        margin-right: 5px;
+                    }
+
+                    .ButtonText {
+                        color: $form-label-color;
+                        font-size: 0.85em;
+                        font-weight: 300;
+                    }
+
+                    &:hover {
+                        .Plus {
+                            background-color: darken($form-label-color, 5%);
+                        }
+                        .ButtonText {
+                            color: darken($form-label-color, 5%);
+                        }
+                    }
+
+                    &:active {
+                        .Plus {
+                            background-color: darken($form-label-color, 10%);
+                        }
+                        .ButtonText {
+                            color: darken($form-label-color, 10%);
+                        }
+                    }
+                }
+            }
+
+            .WSPDetails {
+                @include clearfix;
+                font-size: 0.9em;
+                margin: 20px 0;
+
+                .WSPLabel {
+                    font-size: 0.85em;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                    line-height: 1em;
+                    color: #9b9b9b;
+                }
+
+                .WSPRooms {
+                    margin-bottom: 20px;
+
+                    .Rooms {
+                        line-height: 1em;
+
+                        .sector-label {
+                            font-weight: 600;
+                        }
+
+                        span {
+                            border-right: 1px solid $text-color;
+                            padding-right: 7.5px;
+                            margin-right: 7.5px;
+                            margin-bottom: 0.5em;
+                            display: inline-block;
+                            &:last-child {
+                                border-right: 0 none;
+                                padding-right: 0;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+
+                .WSPRiskLevel {
+                    float: right;
+                    border-left: 2px solid #dcdddc;
+                    padding: 5px 20px;
+                    margin-left: 20px;
+                    margin-bottom: 20px;
+
+                    .RiskLevel {
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        line-height: 1em;
+
+                        &.alto {
+                            color: $state-red;
+                        }
+
+                        &.medio {
+                            color: $state-orange;
+                        }
+
+                        &.basso {
+                            color: $state-green;
+                        }
+                    }
+                }
+
+                .WSPState {
+                    float: left;
+                    clear: left;
+                    margin-bottom: 20px;
+
+                    span {
+                        font-size: 0.9em;
+                    }
+
+                    .state-circles {
+                        float: left;
+                        margin-right: 15px;
+
+                        .state-circle {
+                            display: inline-block;
+                            height: 15px;
+                            width: 15px;
+                            border: 2px solid #dcdddc;
+                            border-radius: 50%;
+                            line-height: 1em;
+                            vertical-align: middle;
+
+                            &.state-red {
+                                background-color: $state-red;
+                                border-color: $state-red;
+                            }
+                            &.state-orange {
+                                border-color: $state-orange;
+                            }
+                            &.state-green {
+                                border-color: $state-green;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .date-range-wrapper {
+                margin-bottom: 20px;
+            }
+
+            .Report {
+                border-top: 2px solid darken(#4cbcc5, 5%);
+                padding: 20px 10px 10px;
+                font-size: 0.85em;
+
+                > div {
+                    margin-bottom: 10px;
+                }
+
+                .Code {
+                    background-color: #0063c9;
+                    color: #fff;
+                    border-radius: 3px;
+                    padding: 5px 10px;
+                    line-height: 1em;
+                    min-width: 85px;
+                    text-align: center;
+                    margin-right: 15px;
+                }
+                .Water {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                &.ColdWater {
+                    .Water {
+                        color: #0063c9;
+                    }
+                }
+                &.HotWater {
+                    .Code {
+                        background-color: #d2000d;
+                    }
+                    .Water {
+                        color: #d2000d;
+                    }
+                }
+                .header,
+                .first-row {
+                    display: flex;
+                }
+                .header {
+                    align-items: center;
+                }
+                .Degrees,
+                .ChlorineDioxide {
+                    > label {
+                        display: block;
+
+                        > p {
+                            margin: 0 0 5px;
+
+                            &.field-error {
+                                margin: 5px 0;
+                            }
+                        }
+                        > div {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                    img {
+                        position: absolute;
+                        top: calc(50% - 10px);
+                        left: 8px;
+                        height: 20px;
+                    }
+                    input {
+                        margin-right: 8px;
+                        height: 34px;
+                        border: 1px solid #cfcfcf;
+                        border-radius: 2px;
+                        padding-right: 10px;
+
+                        &.error {
+                            outline: 0;
+                            border: 2px solid #d0021b;
+                        }
+                    }
+                    span {
+                        font-weight: 600;
+                    }
+                    &.disabled {
+                        pointer-events: none;
+                        opacity: 0.3;
+                        user-select: none;
+                    }
+                }
+                .Degrees {
+                    width: 35%;
+
+                    > label {
+                        > div {
+                            border-right: 1px solid #ccc;
+                            padding-right: 30px;
+                        }
+                    }
+                    input {
+                        width: 100px;
+                        padding-left: 25px;
+                    }
+                }
+                .ChlorineDioxide {
+                    padding-left: 35px;
+
+                    input {
+                        width: 180px;
+                        padding-left: 35px;
+                    }
+                }
+                .UFC {
+                    > p {
+                        margin: 5px 0;
+                    }
+                    .ranges {
+                        display: flex;
+                        margin: 10px 0 12px;
+
+                        > label {
+                            padding-left: 30px;
+                            margin-right: 35px;
+                            position: relative;
+                            display: block;
+                            cursor: pointer;
+
+                            .circle {
+                                color: #cfcfcf;
+                            }
+                            .circle:before,
+                            .circle:after {
+                                content: '';
+                                transition: 0.2s all ease;
+                                position: absolute;
+                                border-radius: 50%;
+                            }
+                            .circle:before {
+                                left: 0;
+                                top: 0;
+                                height: 20px;
+                                width: 20px;
+                                border: 1px solid currentColor;
+                                background-color: white;
+                            }
+                            .circle:after {
+                                left: 10px;
+                                top: 10px;
+                                height: 0;
+                                width: 0;
+                                background-color: currentColor;
+                            }
+                            input {
+                                position: absolute;
+                                left: -9999px;
+
+                                &:checked + .circle {
+                                    color: #509104;
+
+                                    &:after {
+                                        left: 5px;
+                                        top: 5px;
+                                        height: 10px;
+                                        width: 10px;
+                                    }
+                                }
+                            }
+                            .triangle {
+                                position: absolute;
+                                bottom: -10px;
+                                left: calc(50% - 9px);
+                                width: 0;
+                                height: 0;
+                            }
+                        }
+                        &.has-type {
+                            margin-bottom: 10px;
+
+                            > label input:checked {
+                                + .circle {
+                                    color: #f5a623;
+                                }
+                                ~ .triangle {
+                                    border-style: solid;
+                                    border-width: 0 7px 8px 7px;
+                                    border-color: transparent transparent #f5a623 transparent;
+                                }
+                            }
+                        }
+                        &.disabled {
+                            pointer-events: none;
+                            opacity: 0.3;
+                            user-select: none;
+                        }
+                    }
+                }
+                .legionella-types {
+                    padding: 15px;
+                    border: 1px solid #d8d8d8;
+                    border-top: 3px solid #f5a623;
+                    background-color: transparentize($color: white, $amount: 0.37);
+                    display: flex;
+                    flex-flow: row wrap;
+
+                    &.disabled {
+                        border-top: 1px solid #d8d8d8;
+                        pointer-events: none;
+                        user-select: none;
+                        opacity: 0.3;
+                    }
+                    .field-error {
+                        width: 100%;
+                        margin: 5px 0;
+                    }
+                    img {
+                        position: absolute;
+                        top: calc(50% - 10px);
+                        left: 8px;
+                        height: 20px;
+                        z-index: 1000;
+                    }
+                    .bacteria {
+                        position: relative;
+
+                        > span {
+                            font-weight: 600;
+                        }
+                    }
+                    .bacteria-input {
+                        padding-right: 30px;
+
+                        input {
+                            width: 130px;
+                            padding-left: 35px;
+                            margin-right: 8px;
+                            height: 34px;
+                            border: 1px solid #cfcfcf;
+                            border-radius: 2px;
+                            padding-right: 10px;
+
+                            &.error {
+                                outline: 0;
+                                border: 2px solid #d0021b;
+                            }
+                        }
+                    }
+                    .bacteria-select {
+                        flex: 1 1 auto;
+
+                        .Select-control {
+                            padding-left: 25px;
+
+                            .Select-value {
+                                left: 25px;
+                            }
+                        }
+                        .Select-placeholder {
+                            left: 25px;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+            .SamplingActions {
+                margin-top: 20px;
+
+                .SamplingAction {
+                    // border-top: 1px solid #dcdddc;
+                    padding: 15px 0 5px;
+
+                    .SamplingActionLabel {
+                        font-weight: 600;
+                        font-size: 0.8em;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                    }
+
+                    .SamplingActionField {
+                        margin-bottom: 10px;
+                        margin-left: 30px;
+                    }
+                }
+            }
+            .SamplingActionFields {
+                margin: 10px 0;
+            }
+            .SamplingActionField {
+                margin-bottom: 5px;
+
+                input[type='checkbox'] {
+                    height: 20px;
+                    width: 20px;
+                    vertical-align: middle;
+                    position: absolute;
+                    left: 0;
+                    top: 0.3em;
+                }
+
+                label {
+                    padding-left: 30px;
+                    display: block;
+                    position: relative;
+
+                    > span {
+                        font-size: 1.05em;
+                    }
+                }
+
+                .Select {
+                    margin-left: 30px;
+                    margin-top: 10px;
+                    margin-bottom: 15px;
+
+                    &.is-disabled {
+                        pointer-events: none;
+                        opacity: 0.3;
+                    }
+                }
+            }
+            .UserInputButton {
+                text-align: right;
+                border-top: 1px solid #dcdddc;
+                padding: 5px 0;
+
+                button {
+                    line-height: 1em;
+                    font-size: 0.85em;
+
+                    svg {
+                        color: $form-label-color;
+                        margin-right: 5px;
+                        vertical-align: top !important;
+                    }
+
+                    .ButtonText {
+                        color: $form-label-color;
+                        font-weight: 300;
+                    }
+
+                    &:hover {
+                        svg,
+                        .ButtonText {
+                            color: darken($form-label-color, 5%);
+                        }
+                    }
+
+                    &:active {
+                        svg,
+                        .ButtonText {
+                            color: darken($form-label-color, 10%);
+                        }
+                    }
+                }
+            }
+            textarea.user-input-area {
+                width: calc(100% - 50px);
+                max-width: calc(100% - 50px);
+                min-height: 100px;
+                margin-left: 50px;
+                border-color: #ccc;
+                border-radius: 2px;
+                resize: vertical;
+            }
+            &.follow-up {
+                .Calendar {
+                    max-width: 200px;
+                }
+            }
+        }
+
+        .Controls {
+            text-align: center;
+
+            button {
+                background-color: transparent;
+                min-width: 136px;
+                text-align: center;
+                font-size: 1.2em;
+                line-height: 1em;
+                text-transform: uppercase;
+                padding: 15px 30px;
+                margin: 15px;
+                border-radius: 3px;
+
+                &.Save {
+                    background-color: $form-save-color;
+                    color: #fff;
+                }
+
+                &.Cancel {
+                    border: 1.5px solid $headings-background-color;
+                }
+            }
+        }
+        .delete-report {
+            margin-top: 30px;
+            color: #7f7f7f;
+        }
+        .delete-link {
+            color: #d0021b;
+            text-decoration: underline;
+
+            &:focus,
+            &:active,
+            &:hover {
+                color: darken(#d0021b, 10%);
+            }
+        }
+        .error-message {
+            padding: 15px 20px;
+            background-color: transparentize($color: #d0021b, $amount: 0.95);
+            border: 0.1em solid #d0021b;
+            border-radius: 3px;
+        }
+        .field-error {
+            padding: 2px 5px;
+            background-color: transparentize($color: #d0021b, $amount: 0.95);
+            border: 0.1em solid #d0021b;
+            border-radius: 3px;
+            font-size: 1.1em;
+            width: 95%;
+        }
+    }
+}

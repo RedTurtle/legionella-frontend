@@ -1,0 +1,130 @@
+@import '../../scss/variables';
+
+.charts-section {
+    background-color: white;
+    min-height: 424px;
+
+    .charts-content {
+        padding: 30px 15px 25px;
+    }
+    .charts-section-title {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: 600;
+        text-align: right;
+    }
+    .filters-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+    }
+    .filters {
+        display: flex;
+        flex: 1 1 auto;
+    }
+    .chart-filter {
+        flex: 1 1 auto;
+        max-width: 400px;
+
+        .structures {
+            padding-right: 30px;
+            border-right: 1px solid #d3d3d3;
+        }
+        .time-frame {
+            padding-left: 30px;
+        }
+    }
+    .charts-row {
+        display: flex;
+        justify-content: space-between;
+
+        .chart {
+            &.cold-chart {
+                .chart-title span {
+                    background-color: rgba(0, 90, 198, 0.22);
+                }
+            }
+            &.hot-chart {
+                padding-right: 0;
+                border-left: 1px solid #d3d3d3;
+
+                .chart-title span {
+                    background-color: rgba(189, 49, 46, 0.17);
+                }
+            }
+        }
+    }
+    .charts {
+        display: flex;
+    }
+    .legend {
+        width: 300px;
+        background-color: #f5f5f5;
+        padding: 25px;
+    }
+    .legend-text {
+        margin-top: 0;
+        font-weight: 600;
+    }
+    [class^='range'] {
+        float: left;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        margin-top: 0.26em;
+        margin-right: 15px;
+    }
+    .range-perfect {
+        background-color: $state-green;
+        border-color: darken($state-green, 15%);
+        fill: $state-green;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    .range-good {
+        background-color: $state-lightgreen;
+        border-color: darken($state-lightgreen, 15%);
+        fill: $state-lightgreen;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    .range-bad {
+        background-color: $state-yellow;
+        border-color: darken($state-yellow, 15%);
+        fill: $state-yellow;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    .range-danger {
+        background-color: $state-orange;
+        border-color: darken($state-orange, 15%);
+        fill: $state-orange;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    .range-critical {
+        background-color: $state-red;
+        border-color: darken($state-red, 15%);
+        fill: $state-red;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    .range-empty {
+        background-color: #bbb;
+        border-color: #ccc;
+        fill: #ccc;
+        stroke: white;
+        stroke-width: 4px;
+    }
+    @media (min-width: 1350px) {
+        min-height: 464px;
+
+        .charts-content {
+            padding: 50px 30px 45px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    }
+}

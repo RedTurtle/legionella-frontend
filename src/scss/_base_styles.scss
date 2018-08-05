@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+body {
+    padding: 0 0 $footer-height;
+    font-size: $font-size;
+    font-family: 'Titillium Web', 'Helvetica', sans-serif;
+    background-color: $body-bg;
+    color: $text-color;
+    min-height: 100vh;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $headings-color;
+}
+
+.container {
+    padding-left: $container-padding-base;
+    padding-right: $container-padding-base;
+
+    @media (min-width: $screen-xl-min) {
+        padding-left: $container-padding-xl;
+        padding-right: $container-padding-xl;
+    }
+}
+
+.footer-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}

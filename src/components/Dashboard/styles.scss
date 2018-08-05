@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+
+.dashboard {
+    $fixed-width: $details-column-width + $summary-column-width;
+    position: relative;
+    padding-bottom: 90px;
+
+    .controls-wrapper {
+        padding-left: $fixed-width;
+    }
+
+    .top-wrapper {
+        position: absolute;
+        top: 60px;
+        width: $fixed-width;
+    }
+}

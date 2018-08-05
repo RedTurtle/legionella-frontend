@@ -1,0 +1,60 @@
+@import '../../scss/mixins';
+
+.dashboard-top {
+    $main-color: #4CBCC5;
+    padding-right: 25px;
+
+    .add-sample-report-button {
+        padding-bottom: 13px;
+        border-bottom: 2px dashed $main-color;
+    }
+
+    button {
+        height: 56px;
+        line-height: 56px;
+        border-radius: 3px;
+        background-color: $main-color;
+        color: white;
+        padding: 0 24px 0 13px;
+
+        &:hover {
+            background-color: darken($main-color, 5%);
+        }
+
+        &:active {
+            background-color: darken($main-color, 10%);
+        }
+    }
+
+    .plus {
+        font-size: 37px;
+        margin-right: 15px;
+        line-height: 1;
+        position: relative;
+        top: 3px;
+    }
+
+    .button-text {
+        font-size: 1.2em;
+        font-weight: 600;
+        @include antialiasing;
+    }
+
+    .dashboard-top-text {
+        padding: 13px 0 15px;
+    }
+
+    .primary,
+    strong {
+        font-weight: 600;
+    }
+
+    .primary {
+        font-size: 1.12em;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 0 0 2px,
+    }
+}

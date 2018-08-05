@@ -1,0 +1,21 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.dashboard-table {
+    @include clearfix;
+
+    .sliding-columns {
+        float: left;
+        overflow: auto;
+        $fixed-width: $details-column-width + $summary-column-width + $blanks-column-width;
+        width: calc(100% - #{$fixed-width});
+        display: flex;
+    }
+    .no-sample-ranges {
+        font-size: 1.5em;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        padding: 2em;
+    }
+}

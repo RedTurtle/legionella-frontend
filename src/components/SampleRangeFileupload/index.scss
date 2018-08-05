@@ -1,0 +1,68 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.add-new-files {
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin-bottom: 1em;
+            position: relative;
+        }
+        button {
+            background-color: #d25400;
+            color: white;
+            padding: 0px 3px;
+            margin-left: 5px;
+            border-radius: 4px;
+            line-height: 1.2;
+        }
+        svg {
+            position: relative;
+            top: -1px;
+        }
+        input {
+            margin-left: 8px;
+            height: 34px;
+            border: 1px solid #cfcfcf;
+            border-radius: 2px;
+            padding: 2px 8px;
+        }
+        .spinner {
+            position: absolute;
+            top: 10px;
+            right: 140px;
+            padding: 0;
+
+            svg {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+    .react-dropzone-styled {
+        .main-line {
+            margin: 0;
+        }
+        &.active {
+            background-color: white;
+            border-color: #aaa;
+
+            .icon-line {
+                color: #3f7600;
+            }
+        }
+    }
+    .error {
+        background-color: transparentize($color: #d25400, $amount: 0.95);
+        border: 1px solid #d25400;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+
+        svg {
+            color: #d25400;
+            margin-right: 5px;
+        }
+    }
+}

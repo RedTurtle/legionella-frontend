@@ -1,0 +1,18 @@
+.date-range-wrapper {
+    position: relative;
+
+    .calendar-picker {
+        position: absolute;
+        left: 0;
+        top: 110%;
+        z-index: 10;
+        width: 560px;
+        box-shadow: 0 0 5px 3px transparentize(black, 0.7);
+    }
+
+    &.single {
+        .calendar-picker {
+            width: 280px;
+        }
+    }
+}

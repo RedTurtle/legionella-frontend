@@ -1,0 +1,33 @@
+@import '../../scss/mixins';
+
+.footer-wrapper {
+    background-color: #168892;
+    color: white;
+    font-size: 0.9em;
+    padding-top: 17px;
+    padding-bottom: 19px;
+    @include clearfix;
+    @include antialiasing;
+
+    .left-block {
+        float: left;
+        padding: 5px 30px 0 0;
+        border-right: 1px solid transparentize(white, 0.46);
+        height: 72px;
+    }
+
+    .right-block {
+        float: left;
+        padding-left: 30px;
+    }
+
+    p {
+        margin: 0 0 2px;
+    }
+
+    .primary {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 16px;
+    }
+}

@@ -1,0 +1,35 @@
+@import '../../scss/variables';
+
+.add-sample-button {
+    width: 37px;
+    padding-top: 8px;
+    margin-left: -1px;
+
+    .button-content {
+        height: 118px;
+        padding: 0 4px 7px;
+        border-right: $dashboard-col-separator;
+        border-left: $dashboard-col-separator;
+    }
+
+    button {
+        text-align: center;
+        background-color: #4CBCC5;
+        //padding: 24px 0 32px;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+            background-color: darken(#4CBCC5, 5%);
+        }
+
+        &:active {
+            background-color: darken(#4CBCC5, 10%);
+        }
+    }
+
+    span {
+        color: white;
+        font-size: 36px;
+    }
+}

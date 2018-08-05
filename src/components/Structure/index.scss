@@ -1,0 +1,55 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.structure {
+    $height: 210px;
+    width: $summary-column-width;
+    border-right: $dashboard-col-separator;
+
+    .structure-content {
+        height: $height - $dashboard-row-separator-width;
+        padding: 10px 20px 0;
+    }
+
+    .structure-header {
+        @include clearfix;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &.highlighted {
+        .structure-content {
+            background-color: $highlight-bg-color;
+        }
+    }
+
+    h3.structure-title {
+        margin: 0 auto 10px 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        float: left;
+    }
+
+    .wsps-num {
+        float: right;
+    }
+
+    .structure-data-number {
+        font-size: 1.5em;
+        margin-left: 10px;
+    }
+
+    .structure-data {
+        padding: 0 0 14px;
+    }
+    &.tower .structure-data {
+        padding-top: 30px;
+    }
+
+    .child-wsps {
+        > * {
+            border-top: $dashboard-childrow-separator;
+        }
+    }
+}

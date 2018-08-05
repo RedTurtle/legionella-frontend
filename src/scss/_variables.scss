@@ -1,0 +1,55 @@
+$body-bg: #f5f5f5;
+
+$screen-xs-min: 480px;
+$screen-sm-min: 600px;
+$screen-md-min: 900px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1350px;
+
+$screen-xs-max: $screen-sm-min - 1px;
+$screen-sm-max: $screen-md-min - 1px;
+$screen-md-max: $screen-lg-min - 1px;
+$screen-lg-max: $screen-xl-min - 1px;
+
+$container-padding-base: 15px;
+$container-padding-xl: 35px;
+
+$footer-height: 108px;
+
+$text-color: #333;
+$headings-color: black;
+$headings-background-color: #4a4a4a;
+$font-size: 16px;
+$primary-color: #4cbcc5;
+$primary-darker: #168892;
+
+$state-red: #d25400;
+$state-orange: #dfa609;
+$state-yellow: #e4da6f;
+$state-lightgreen: #c0e28b;
+$state-green: #085a00;
+
+$highlight-bg-color: transparentize(#fffded, 0.49);
+
+$dashboard-row-separator-color: #5a6772;
+$dashboard-childrow-separator-color: #d9d9d9;
+$dashboard-row-separator-width: 2px;
+$dashboard-row-separator-style: solid;
+$dashboard-row-separator: $dashboard-row-separator-width $dashboard-row-separator-style $dashboard-row-separator-color;
+$dashboard-childrow-separator: $dashboard-row-separator-width $dashboard-row-separator-style
+    $dashboard-childrow-separator-color;
+
+$dashboard-col-separator-color: $primary-color;
+$dashboard-col-separator-style: solid;
+$dashboard-col-separator-width: 1px;
+$dashboard-col-separator: $dashboard-col-separator-width $dashboard-col-separator-style $dashboard-col-separator-color;
+
+$details-column-width: 27px;
+$summary-column-width: 400px;
+$blanks-column-width: 36px;
+$sample-column-width: 450px;
+$addsample-column-width: 565px;
+$detailsample-column-width: 1200px;
+
+$form-save-color: #3f7600;
+$form-label-color: darken($dashboard-col-separator-color, 10%);

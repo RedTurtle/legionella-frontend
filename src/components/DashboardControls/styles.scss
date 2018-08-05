@@ -1,0 +1,57 @@
+@import '../../scss/mixins';
+
+.dashboard-controls {
+    padding: 35px 20px 10px;
+    @include clearfix;
+
+    .left-block {
+        float: left;
+        @include clearfix;
+
+        > * {
+            float: left;
+        }
+    }
+
+    .date-range-wrapper {
+        padding-right: 25px;
+        border-right: 1px solid #c6cace;
+    }
+
+    .db-export {
+        padding-left: 25px;
+
+        .export-link {
+            height: 34px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            svg {
+                color: #4cbcc5;
+                margin-right: 8px;
+            }
+
+            span {
+                color: #168892;
+            }
+
+            &:active,
+            &:hover {
+                svg,
+                span {
+                    color: darken(#168892, 10%);
+                }
+            }
+        }
+    }
+
+    .right-block {
+        float: right;
+        margin-top: 18px;
+    }
+
+    .prev-next-button {
+        margin-left: 11px;
+    }
+}

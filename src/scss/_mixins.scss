@@ -1,0 +1,26 @@
+// Clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Antialiasing
+@mixin antialiasing() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Ellipsis
+@mixin ellipsis($width: 100%, $display: inline-block) {
+    max-width: $width;
+    overflow: hidden;
+    display: $display;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

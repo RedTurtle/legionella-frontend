@@ -1,0 +1,49 @@
+@import '../../scss/variables';
+
+.dashboard-column {
+    float: left;
+    background-color: white;
+    border-bottom: $dashboard-row-separator;
+
+    > div:not(.structure-row),
+    .structure-row > div {
+        border-top: $dashboard-row-separator;
+    }
+
+    .structure-row {
+        display: flex;
+    }
+
+    &.structures-column {
+        margin-top: 128px;
+        position: relative;
+        width: $details-column-width + $summary-column-width + $blanks-column-width;
+
+        .add-sample-button {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+        }
+    }
+    &.fake-column {
+        opacity: 0.6;
+        pointer-events: none;
+        user-select: none;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, transparent, transparentize($body-bg, 0.2) 50%, $body-bg);
+        }
+        .sample-attachments,
+        .workflow-wrapper,
+        .sample-edit {
+            display: none;
+        }
+    }
+}
