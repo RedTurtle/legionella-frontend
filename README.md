@@ -13,7 +13,7 @@ Il **repo del backend** è
 [legionella-backend](https://github.com/RedTurtle/legionella-backend).
 
 
-## Come creare una build specifica per questo progetto
+### Come creare una build specifica per questo progetto
 
 In questo progetto usiamo [yarn](https://yarnpkg.com/) come package manager.
 
@@ -26,7 +26,7 @@ il comando `yarn`.
 Fatto questo, creare la build con il comando `yarn build`.
 
 
-## Usare questo frontend
+### Usare questo frontend
 
 Questo frontend si interfaccia ad un backend specifico:
 [legionella-backend](https://github.com/RedTurtle/legionella-backend).
